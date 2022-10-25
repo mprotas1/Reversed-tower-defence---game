@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
@@ -17,20 +18,37 @@ public class Movement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         waypoints = GameObject.Find("Waypoints").GetComponent<Waypoints>();
         destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
+        
         agent.SetDestination(destination);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(indexOfCurrWaypoint <= waypoints.getWaypoints().Length)
+        if(indexOfCurrWaypoint <= waypoints.getWaypoints().Length) 
         {
-            if(agent.destination.x == destination.x && agent.destination.z == destination.z)
+            // check if reached the waypoint
+            Debug.Log(IsCurrentWaypointReached());
+            if(IsCurrentWaypointReached())
             {
-                Debug.Log("Reached destination... Changing the index");
                 indexOfCurrWaypoint++;
-                agent.SetDestination(waypoints.getWaypoints()[indexOfCurrWaypoint].position);
+                destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
+                Debug.Log(indexOfCurrWaypoint);
+                agent.SetDestination(destination);
             }
+        }
+    }
+
+    private bool IsCurrentWaypointReached()
+    {
+        Debug.Log(Vector3.Distance(gameObject.transform.position, destination));
+        if (Vector3.Distance(gameObject.transform.position, destination) <= 2.0f) {
+            Debug.Log("Reached waypoint");
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
