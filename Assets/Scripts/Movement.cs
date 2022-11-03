@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        waypoints = GameObject.Find("Waypoints").GetComponent<Waypoints>();
+        waypoints = GameObject.Find("Checkpoints").GetComponent<Waypoints>();
         destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
         
         agent.SetDestination(destination);
