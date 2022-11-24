@@ -12,6 +12,5 @@ public class ChangeCard : MonoBehaviour
         System.Random r = new System.Random();
         int rnum = r.Next(0, 3);
         image.sprite = sprites[rnum];
-
     }
 }
