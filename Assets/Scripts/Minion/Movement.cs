@@ -22,13 +22,12 @@ public class Movement : MonoBehaviour
         agent.SetDestination(destination);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move()
     {
-        if(indexOfCurrWaypoint < waypoints.getWaypoints().Length) 
+        if (indexOfCurrWaypoint < waypoints.getWaypoints().Length)
         {
             // check if reached the waypoint
-            if(IsCurrentWaypointReached())
+            if (IsCurrentWaypointReached())
             {
                 indexOfCurrWaypoint++;
                 destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;

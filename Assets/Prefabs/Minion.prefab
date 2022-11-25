@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3268135453432477686}
   - component: {fileID: 7155258060320996837}
   - component: {fileID: 5006968587641969959}
+  - component: {fileID: 8760536271427298026}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Enemy
@@ -148,3 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: fd9acadb47262394b871eda26cf02158, type: 2}
+--- !u!114 &8760536271427298026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445220442745754867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df50e12bd18a9784f9caccf790c87385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
