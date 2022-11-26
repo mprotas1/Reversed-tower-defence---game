@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
 public class Attack : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -20,7 +19,10 @@ public class Attack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
-            Debug.Log("Found enemy: " + other.gameObject);
+        {
+
+        }
+            //Debug.Log("Found enemy: " + other.gameObject);
     }
 }
 

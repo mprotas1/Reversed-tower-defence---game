@@ -9,7 +9,7 @@ public class MinionStateManager : MonoBehaviour
     public MinionAttackingState AttackState = new MinionAttackingState();
     public MinionDeadState DeadState = new MinionDeadState();
 
-    private GameObject LockedEnemy;
+    public GameObject LockedEnemy;
     public Movement movement;
 
     void Start()
@@ -32,6 +32,8 @@ public class MinionStateManager : MonoBehaviour
     {
         if(collision.collider.tag == "Tower")
         {
+            LockedEnemy = collision.gameObject;
+            Debug.Log("Switched to: " + this.CurrentState.ToString());
             SwitchState(AttackState);
         }
     }

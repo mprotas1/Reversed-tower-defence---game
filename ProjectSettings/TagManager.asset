@@ -8,6 +8,7 @@ TagManager:
   - Path
   - Checkpoint
   - Enemy
+  - Tower
   layers:
   - Default
   - TransparentFX
