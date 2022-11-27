@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DummyTower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9097646388229589206, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
 --- !u!1 &560207124
@@ -812,6 +816,10 @@ PrefabInstance:
     - target: {fileID: 7806781138099216679, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_Name
       value: DummyTower (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097646388229589206, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
@@ -1383,6 +1391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DummyTower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9097646388229589206, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
 --- !u!1 &1484034957 stripped
@@ -1566,6 +1578,10 @@ PrefabInstance:
     - target: {fileID: 7806781138099216679, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_Name
       value: DummyTower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097646388229589206, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
@@ -2045,6 +2061,10 @@ PrefabInstance:
     - target: {fileID: 3445220442745754879, guid: 4d4bdceb8dc4c854d94e675c57688f76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235524280026031902, guid: 4d4bdceb8dc4c854d94e675c57688f76, type: 3}
+      propertyPath: m_Radius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4235524280026031902, guid: 4d4bdceb8dc4c854d94e675c57688f76, type: 3}
       propertyPath: m_IsTrigger

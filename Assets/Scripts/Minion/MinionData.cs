@@ -20,4 +20,7 @@ public class MinionData : ScriptableObject
 
     [Range(0, 10)]
     public float Range;
+
+    [Range(0, 10)]
+    public double AttackFrequency;
 }

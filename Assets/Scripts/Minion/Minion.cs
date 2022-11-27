@@ -16,6 +16,7 @@ public abstract class Minion : MonoBehaviour
     public double Armor { get; private set; }
     public double AttackPoints { get; set; }
     public double Range { get; set; }
+    public double AttackFrequency { get; set; }
 
     public  MinionData data;
     public abstract void ReceiveDamage(double damagePoints);
@@ -30,6 +31,7 @@ public abstract class Minion : MonoBehaviour
         this.AttackPoints = data.AttackPoints;
         this.Range = data.Range;
         this.MaxHealthPoints = HealthPoints;
+        this.AttackFrequency = data.AttackFrequency;
     }
 
     // return "true" if minion is dead - its HP is lower or equal to zero

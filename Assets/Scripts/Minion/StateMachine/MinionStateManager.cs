@@ -14,6 +14,7 @@ public class MinionStateManager : MonoBehaviour
 
     void Start()
     {
+        LockedEnemy = null;
         movement = GetComponent<Movement>();
         // a minion at the beggining of it's life follows the line until it spies an enemy tower
         CurrentState = FollowLaneState;
@@ -28,19 +29,18 @@ public class MinionStateManager : MonoBehaviour
         CurrentState.UpdateState(this);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag == "Tower")
-        {
-            LockedEnemy = collision.gameObject;
-            Debug.Log("Switched to: " + this.CurrentState.ToString());
-            SwitchState(AttackState);
-        }
-    }
-
     public void SwitchState(MinionBaseState state)
     {
         this.CurrentState = state;
         CurrentState.EnterState(this);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tower") && LockedEnemy == null)
+        {
+            LockedEnemy = other.gameObject;
+            SwitchState(AttackState);
+        }
     }
 }
