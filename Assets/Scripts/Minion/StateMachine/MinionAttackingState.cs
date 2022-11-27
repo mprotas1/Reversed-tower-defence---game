@@ -25,7 +25,7 @@ public class MinionAttackingState : MinionBaseState
 
         if (distance <= minion.GetComponent<Minion>().Range)
         {
-            minion.GetComponent<MinionAttack>();
+            minion.GetComponent<MinionAttack>().AttackTower(LockedTower);
             // if enemy tower is destroyed - switch to the FollowLaneState and follow the path
             if(LockedTower.HealthPoints <= 0)
             {

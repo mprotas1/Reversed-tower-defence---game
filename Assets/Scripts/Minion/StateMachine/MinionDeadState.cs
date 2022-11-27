@@ -6,7 +6,10 @@ public class MinionDeadState : MinionBaseState
 {
     public override void EnterState(MinionStateManager minion)
     {
-        throw new System.NotImplementedException();
+        // play dead animation
+
+        // destroy the object
+        Object.Destroy(minion.gameObject);
     }
 
     public override void OnCollisionEnter(MinionStateManager minion, Collider other)

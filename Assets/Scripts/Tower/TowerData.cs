@@ -9,7 +9,7 @@ public class TowerData : ScriptableObject
 
     public string towerName;
     [Space(20)]
-    [Range(0, 100)]
+    [Range(0, 500)]
     public double HealthPoints;
 
     [Range(0, 100)]

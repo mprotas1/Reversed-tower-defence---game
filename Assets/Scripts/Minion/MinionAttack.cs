@@ -19,7 +19,7 @@ public class MinionAttack : MonoBehaviour
     public void AttackTower(Tower tower)
     {
         // stop NavMeshAgent
-        agent.Stop();
+        agent.isStopped = true;
 
         // implement animation
         //animator.Play("Attack");

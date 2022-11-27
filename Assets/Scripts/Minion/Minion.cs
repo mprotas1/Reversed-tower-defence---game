@@ -16,6 +16,7 @@ public abstract class Minion : MonoBehaviour
     public double Armor { get; private set; }
     public double AttackPoints { get; set; }
     public double Range { get; set; }
+
     public  MinionData data;
     public abstract void ReceiveDamage(double damagePoints);
     public abstract void Attack(Tower tower);
