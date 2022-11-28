@@ -11,15 +11,18 @@ public class Movement : MonoBehaviour
     private int indexOfCurrWaypoint = 0;
     private Waypoints waypoints;
     private Vector3 destination;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();   
         waypoints = GameObject.Find("Checkpoints").GetComponent<Waypoints>();
         destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
         
         agent.SetDestination(destination);
+        animator.Play("Run");
     }
 
     public void Move()
@@ -32,6 +35,7 @@ public class Movement : MonoBehaviour
                 indexOfCurrWaypoint++;
                 destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
                 agent.SetDestination(destination);
+                animator.Play("Run");
             }
         }
     }

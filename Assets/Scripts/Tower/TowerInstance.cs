@@ -32,5 +32,6 @@ public class TowerInstance : Tower
     {
         Debug.Log(HealthPoints);
         this.HealthPoints -= damagePoints;
+        OnDead();
     }
 }

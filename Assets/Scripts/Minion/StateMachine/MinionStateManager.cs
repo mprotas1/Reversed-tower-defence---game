@@ -10,12 +10,10 @@ public class MinionStateManager : MonoBehaviour
     public MinionDeadState DeadState = new MinionDeadState();
 
     public GameObject LockedEnemy;
-    public Movement movement;
 
     void Start()
     {
         LockedEnemy = null;
-        movement = GetComponent<Movement>();
         // a minion at the beggining of it's life follows the line until it spies an enemy tower
         CurrentState = FollowLaneState;
 

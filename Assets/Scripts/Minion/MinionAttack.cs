@@ -25,11 +25,12 @@ public class MinionAttack : MonoBehaviour
     {
         if(canAttack)
         {
+            this.transform.LookAt(tower.gameObject.transform);
             // stop NavMeshAgent
             agent.isStopped = true;
 
             // implement animation
-            //animator.Play("Attack");
+            animator.Play("Attack");
 
             // handle attacking tower (values)
             Debug.Log("Attacking");

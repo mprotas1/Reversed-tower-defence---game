@@ -16,5 +16,5 @@ MonoBehaviour:
   HealthPoints: 65
   Armor: 5
   AttackPoints: 7.5
-  Range: 3.25
-  AttackFrequency: 5
+  Range: 1.8
+  AttackFrequency: 2.5

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class MinionFollowLaneState : MinionBaseState
 {
+    private Movement movement;
+
     public override void EnterState(MinionStateManager minion)
     {
-        minion.movement.Move();
+        movement = minion.GetComponent<Movement>();
+        movement.Move();
     }
 
     public override void OnCollisionEnter(MinionStateManager minion, Collider other)
     {
-        if(other.tag == "Tower")
+        if(other.CompareTag("Tower"))
         {
             minion.SwitchState(minion.AttackState);
         }
@@ -19,7 +22,7 @@ public class MinionFollowLaneState : MinionBaseState
 
     public override void UpdateState(MinionStateManager minion)
     {
-        minion.movement.Move();
+        movement.Move();
     }
 
 }

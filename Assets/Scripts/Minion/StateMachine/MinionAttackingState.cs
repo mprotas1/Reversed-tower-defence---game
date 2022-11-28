@@ -23,6 +23,8 @@ public class MinionAttackingState : MinionBaseState
         float distance = Vector3.Distance(minion.transform.position,
             minion.LockedEnemy.transform.position);
 
+        minion.transform.LookAt(LockedTower.gameObject.transform);
+
         if (distance <= minion.GetComponent<Minion>().Range)
         {
             minion.GetComponent<MinionAttack>().AttackTower(LockedTower);
