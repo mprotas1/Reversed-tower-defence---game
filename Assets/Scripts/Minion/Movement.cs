@@ -40,6 +40,14 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void ReturnToLane()
+    {
+        indexOfCurrWaypoint++;
+        destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
+        agent.SetDestination(destination);
+        animator.Play("Run");
+    }
+
     private bool IsCurrentWaypointReached()
     {
         if (Vector3.Distance(gameObject.transform.position, destination) <= 2.0f) {
@@ -49,5 +57,15 @@ public class Movement : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int GetIndex()
+    {
+        return indexOfCurrWaypoint;
+    }
+
+    public void SetIndex(int index)
+    {
+        indexOfCurrWaypoint = index;
     }
 }

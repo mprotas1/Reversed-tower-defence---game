@@ -31,6 +31,8 @@ public class MinionAttackingState : MinionBaseState
             // if enemy tower is destroyed - switch to the FollowLaneState and follow the path
             if(LockedTower.HealthPoints <= 0)
             {
+                Debug.Log("Switching state");
+                Debug.Log(minion.GetComponent<Movement>().GetIndex());
                 minion.SwitchState(minion.FollowLaneState);
             }
         }

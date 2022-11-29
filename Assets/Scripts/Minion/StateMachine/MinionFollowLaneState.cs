@@ -8,7 +8,9 @@ public class MinionFollowLaneState : MinionBaseState
 
     public override void EnterState(MinionStateManager minion)
     {
+        Debug.Log("I'm in FollowLane state");
         movement = minion.GetComponent<Movement>();
+        movement.SetIndex(movement.GetIndex() + 1);
         movement.Move();
     }
 
