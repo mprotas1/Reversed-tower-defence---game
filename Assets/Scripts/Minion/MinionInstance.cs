@@ -16,6 +16,7 @@ public class MinionInstance : Minion
 
     public override void ReceiveDamage(double damagePoints)
     {
+        Debug.Log("Received: " + damagePoints + " damage\nLeft: " + this.HealthPoints);
         this.HealthPoints -= damagePoints;
     }
 

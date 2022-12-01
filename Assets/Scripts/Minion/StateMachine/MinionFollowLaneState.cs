@@ -21,7 +21,6 @@ public class MinionFollowLaneState : MinionBaseState
 
     public override void UpdateState(MinionStateManager minion)
     {
-        //Debug.Log(movement.GetIndex());
     }
 
 }

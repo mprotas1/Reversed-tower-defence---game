@@ -20,4 +20,7 @@ public class TowerData : ScriptableObject
 
     [Range(0, 250)]
     public int MoneyForDestroying;
+
+    [Range(0, 10)]
+    public double AttackFrequency;
 }

@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();   

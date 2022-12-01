@@ -8,22 +8,30 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject minion;
     private readonly int radius = 5;
+    [SerializeField]
+    private Card card;
 
     private void Start()
     {
-        
+
     }
 
-    private void SpawnMinion()
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnMinion(card);
+        }
+    }
+
+    private void SpawnMinion(Card card)
     {
         Vector3 position = new Vector3(transform.position.x + Random.Range(0, radius),
                 transform.position.y,
                 transform.position.z + Random.Range(0, radius));
-        GameObject newMinion = Instantiate(minion, position, Quaternion.identity);
+        GameObject.Instantiate(card.CardPrefab, position, Quaternion.identity);
     }
 
-    private void SetMinion(GameObject minion)
-    {
-        this.minion = minion;
-    }
+
 }
+

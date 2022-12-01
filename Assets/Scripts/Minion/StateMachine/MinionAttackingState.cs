@@ -8,6 +8,7 @@ public class MinionAttackingState : MinionBaseState
     private Tower LockedTower;
     public override void EnterState(MinionStateManager minion)
     {
+        Debug.Log("I'm in AttackState");
         Vector3 destination = minion.LockedEnemy.transform.position;
         LockedTower = minion.LockedEnemy.GetComponent<Tower>();
         minion.GetComponent<NavMeshAgent>().SetDestination(destination);

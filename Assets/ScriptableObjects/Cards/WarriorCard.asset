@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WarriorCard
   m_EditorClassIdentifier: 
   CardSprite: {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
-  CardPrefab: {fileID: 3445220442745754867, guid: 7e6671ef72ed0e04992ba931e2453d66, type: 3}
+  CardPrefab: {fileID: 7966600483087931163, guid: 4199592493673e745b47d0954d8dc5cf, type: 3}

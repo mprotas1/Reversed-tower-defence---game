@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DummyTower
   m_EditorClassIdentifier: 
   towerName: DummyTower
-  HealthPoints: 5
+  HealthPoints: 42
   AttackPoints: 13.5
   Range: 7
   MoneyForDestroying: 50
+  AttackFrequency: 3

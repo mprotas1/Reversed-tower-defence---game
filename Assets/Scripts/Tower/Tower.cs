@@ -10,11 +10,12 @@ public abstract class Tower : MonoBehaviour
      * It has its own HP, Attack and Range of attack. When player destroys it - he get MoneyForDestroying
     */
 
-    public double HealthPoints;
-    public double MaxHealthPoints;
-    public double AttackPoints;
-    public double Range;
-    public int MoneyForDestroying;
+    public double HealthPoints { get; set; }
+    public double MaxHealthPoints { get; set; }
+    public double AttackPoints { get; set; }
+    public double Range { get; set; }
+    public int MoneyForDestroying { get; set; }
+    public double AttackFrequency { get; set; }
     public TowerData data;
     public abstract void ReceiveDamage(double damagePoints);
     public abstract void Attack(Minion minion);
@@ -25,6 +26,7 @@ public abstract class Tower : MonoBehaviour
         this.HealthPoints = data.HealthPoints;
         this.AttackPoints = data.AttackPoints;
         this.Range = data.Range;
+        this.AttackFrequency = data.AttackFrequency;
         this.MaxHealthPoints = HealthPoints;
     }
 
