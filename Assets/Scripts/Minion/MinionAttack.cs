@@ -28,9 +28,9 @@ public class MinionAttack : MonoBehaviour
             this.transform.LookAt(tower.gameObject.transform);
             // stop NavMeshAgent
             agent.isStopped = true;
-
             // implement animation
             animator.Play("Attack");
+            animator.SetTrigger("IsIdle");
 
             // handle attacking tower (values)
             Debug.Log("Attacking");

@@ -20,9 +20,8 @@ public class Movement : MonoBehaviour
         animator = GetComponent<Animator>();   
         waypoints = GameObject.Find("Checkpoints").GetComponent<Waypoints>();
         destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
-        
-        agent.SetDestination(destination);
-        animator.Play("Run");
+
+        Move();
     }
 
     public void Move()

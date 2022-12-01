@@ -11,6 +11,7 @@ public class MinionAttackingState : MinionBaseState
         Vector3 destination = minion.LockedEnemy.transform.position;
         LockedTower = minion.LockedEnemy.GetComponent<Tower>();
         minion.GetComponent<NavMeshAgent>().SetDestination(destination);
+        minion.GetComponent<Movement>().SetIndex(minion.GetComponent<Movement>().GetIndex() + 1);
     }
 
     public override void OnCollisionEnter(MinionStateManager minion, Collider other)
@@ -28,11 +29,10 @@ public class MinionAttackingState : MinionBaseState
         if (distance <= minion.GetComponent<Minion>().Range)
         {
             minion.GetComponent<MinionAttack>().AttackTower(LockedTower);
+
             // if enemy tower is destroyed - switch to the FollowLaneState and follow the path
-            if(LockedTower.HealthPoints <= 0)
+            if (LockedTower.HealthPoints <= 0)
             {
-                Debug.Log("Switching state");
-                Debug.Log(minion.GetComponent<Movement>().GetIndex());
                 minion.SwitchState(minion.FollowLaneState);
             }
         }

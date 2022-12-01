@@ -30,8 +30,8 @@ public class TowerInstance : Tower
 
     public override void ReceiveDamage(double damagePoints)
     {
-        Debug.Log(HealthPoints);
         this.HealthPoints -= damagePoints;
+        Debug.Log(HealthPoints);
         OnDead();
     }
 }
