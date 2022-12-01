@@ -5,15 +5,22 @@ using UnityEngine;
 public class MinionStateManager : MonoBehaviour
 {
     private MinionBaseState CurrentState;
-    public MinionFollowLaneState FollowLaneState = new MinionFollowLaneState();
-    public MinionAttackingState AttackState = new MinionAttackingState();
-    public MinionDeadState DeadState = new MinionDeadState();
+    public MinionFollowLaneState FollowLaneState;
+    public MinionAttackingState AttackState;
+    public MinionDeadState DeadState;
 
     public GameObject LockedEnemy;
 
     void Start()
     {
+        // initializing states of minion
+        FollowLaneState = new MinionFollowLaneState();
+        AttackState = new MinionAttackingState();
+        DeadState = new MinionDeadState();
+
+        // setting LockedEnemy GO to null
         LockedEnemy = null;
+
         // a minion at the beggining of it's life follows the line until it spies an enemy tower
         CurrentState = FollowLaneState;
 

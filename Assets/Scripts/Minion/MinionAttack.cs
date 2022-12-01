@@ -25,16 +25,22 @@ public class MinionAttack : MonoBehaviour
     {
         if(canAttack)
         {
+            // make minion to look at enemy LockedTower tower
             this.transform.LookAt(tower.gameObject.transform);
+
             // stop NavMeshAgent
             agent.isStopped = true;
+
             // implement animation
-            animator.Play("Attack");
-            animator.SetTrigger("IsIdle");
 
             // handle attacking tower (values)
             Debug.Log("Attacking");
+            //animator.SetTrigger("Attack");
             minion.Attack(tower);
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) // check if "Attack" is playing...
+            {
+                animator.Play("Attack");
+            }
 
             // delay attacks using AttackFrequency value from Minion
             StopAllCoroutines();

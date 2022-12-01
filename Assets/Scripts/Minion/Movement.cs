@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
 
+// script placed on Minion GameObject to handle movement site
 public class Movement : MonoBehaviour
 {
     private NavMeshAgent agent;
@@ -19,30 +20,25 @@ public class Movement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();   
         waypoints = GameObject.Find("Checkpoints").GetComponent<Waypoints>();
-        destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
-
-        Move();
     }
 
     public void Move()
     {
-        if (indexOfCurrWaypoint < waypoints.getWaypoints().Length)
-        {
-            // check if reached the waypoint
-            if (IsCurrentWaypointReached())
-            {
-                indexOfCurrWaypoint++;
-                destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
-                agent.SetDestination(destination);
-                animator.Play("Run");
-            }
-        }
+        agent.isStopped = false;
+        Debug.Log(waypoints.getWaypoints()[indexOfCurrWaypoint].name);
+        animator.Play("Run");
+        agent.SetDestination(destination);
+        SetMovDestination();
+    }
+
+    public void Stop()
+    {
+        agent.isStopped = true;
+        animator.Play("Idle");
     }
 
     public void ReturnToLane()
     {
-        indexOfCurrWaypoint++;
-        destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
         agent.SetDestination(destination);
         animator.Play("Run");
     }
@@ -58,6 +54,9 @@ public class Movement : MonoBehaviour
         }
     }
 
+    /* 
+     * getter and setter methods
+    */
     public int GetIndex()
     {
         return indexOfCurrWaypoint;
@@ -66,5 +65,11 @@ public class Movement : MonoBehaviour
     public void SetIndex(int index)
     {
         indexOfCurrWaypoint = index;
+    }
+
+    private void SetMovDestination()
+    {
+        destination = waypoints.getWaypoints()[indexOfCurrWaypoint].position;
+        indexOfCurrWaypoint++;
     }
 }

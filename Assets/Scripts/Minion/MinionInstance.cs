@@ -24,7 +24,6 @@ public class MinionInstance : Minion
     {
         this.InitializeMinion();
         Debug.Log(this.ToString());
-        Debug.Log(this.IsDead());
     }
 
     public override string ToString()

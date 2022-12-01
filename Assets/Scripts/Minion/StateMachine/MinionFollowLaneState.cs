@@ -11,17 +11,17 @@ public class MinionFollowLaneState : MinionBaseState
     {
         Debug.Log("I'm in FollowLane state");
         movement = minion.GetComponent<Movement>();
-        //movement.SetIndex(movement.GetIndex() + 1);
-        //movement.Move();
+        movement.Move();
     }
 
     public override void OnCollisionEnter(MinionStateManager minion, Collider other)
     {
+        throw new System.NotImplementedException();
     }
 
     public override void UpdateState(MinionStateManager minion)
     {
-        //movement.Move();
+        //Debug.Log(movement.GetIndex());
     }
 
 }

@@ -1694,6 +1694,10 @@ PrefabInstance:
       value: DogWarrior
       objectReference: {fileID: 0}
     - target: {fileID: 3400854913158609223, guid: 45288819fde2143449a96207b14db0bb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400854913158609223, guid: 45288819fde2143449a96207b14db0bb, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}

@@ -11,7 +11,6 @@ public class MinionAttackingState : MinionBaseState
         Vector3 destination = minion.LockedEnemy.transform.position;
         LockedTower = minion.LockedEnemy.GetComponent<Tower>();
         minion.GetComponent<NavMeshAgent>().SetDestination(destination);
-        minion.GetComponent<Movement>().SetIndex(minion.GetComponent<Movement>().GetIndex() + 1);
     }
 
     public override void OnCollisionEnter(MinionStateManager minion, Collider other)
@@ -21,20 +20,33 @@ public class MinionAttackingState : MinionBaseState
 
     public override void UpdateState(MinionStateManager minion)
     {
-        float distance = Vector3.Distance(minion.transform.position,
-            minion.LockedEnemy.transform.position);
+        HandleAttack(minion);
+    }
 
-        minion.transform.LookAt(LockedTower.gameObject.transform);
-
-        if (distance <= minion.GetComponent<Minion>().Range)
+    private void HandleAttack(MinionStateManager minion)
+    {
+        if(minion.LockedEnemy.gameObject != null)
         {
-            minion.GetComponent<MinionAttack>().AttackTower(LockedTower);
+            float distance = Vector3.Distance(minion.transform.position,
+                        minion.LockedEnemy.transform.position);
 
-            // if enemy tower is destroyed - switch to the FollowLaneState and follow the path
-            if (LockedTower.HealthPoints <= 0)
+            minion.transform.LookAt(LockedTower.gameObject.transform);
+
+            if (distance <= minion.GetComponent<Minion>().Range)
             {
-                minion.SwitchState(minion.FollowLaneState);
+                minion.GetComponent<MinionAttack>().AttackTower(LockedTower);
+
+                // if enemy tower is destroyed - switch to the FollowLaneState and follow the path
+                if (LockedTower.HealthPoints <= 0)
+                {
+                    minion.SwitchState(minion.FollowLaneState);
+                }
             }
         }
+        else
+        {
+            minion.SwitchState(minion.FollowLaneState);
+        }
+        
     }
 }
