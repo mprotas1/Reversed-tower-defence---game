@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardSprite: {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
   CardPrefab: {fileID: 3445220442745754867, guid: 5b3be885e37e9da4eafebc960a7650f1, type: 3}
+  CashForMinion: 15

@@ -29,9 +29,9 @@ public class ChangeCard : MonoBehaviour
     public void ChangeOnClick()
     {
         int num = UnityEngine.Random.Range(0, cards.Length);
+        OnCardChange(card);
         SetCard(cards[num]);
         ChangeCardImage();
-        OnCardChange(card);
     }
 
     public void SetCard(Card card)

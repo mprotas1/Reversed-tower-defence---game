@@ -17,7 +17,7 @@ public class CardSystem : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        ChangeCards();
+        //ChangeCards();
     }
 
     void ChangeCards()

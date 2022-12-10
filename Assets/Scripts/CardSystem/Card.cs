@@ -9,9 +9,10 @@ public class Card : ScriptableObject
 
     public Sprite CardSprite;
     public GameObject CardPrefab;
+    public int CashForMinion;
 
     public override string ToString()
     {
-        return "Card with name: " + this.name;
+        return "Card with name: " + this.name + "\nCost: " + CashForMinion;
     }
 }
