@@ -7,22 +7,17 @@ using UnityEngine.UI;
 
 public class CardSystem : MonoBehaviour
 {
-
     public GameObject[] buttons;
     public GameObject[] minions;
     public Sprite[] sprites;
 
+    [SerializeField]
+    private Card[] cards;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ChangeCards();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void ChangeCards()
@@ -32,10 +27,9 @@ public class CardSystem : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             int rnum = r.Next(0, 3);
-            buttons[i].GetComponent<Image>().sprite = sprites[rnum];
+            buttons[i].GetComponent<ChangeCard>().SetCard(cards[rnum]);
         }
     }
-
 
     public void ChangeCard()
     {
@@ -43,7 +37,6 @@ public class CardSystem : MonoBehaviour
         int rnum = r.Next(0, 3);
         print(rnum);
         this.gameObject.GetComponent<Image>().sprite = null;//sprites[rnum];
-
     }
 
 }

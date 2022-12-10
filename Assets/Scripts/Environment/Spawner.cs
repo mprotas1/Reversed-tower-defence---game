@@ -13,15 +13,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnMinion(card);
-        }
+        ChangeCard.OnCardChange += SpawnMinion;
     }
 
     private void SpawnMinion(Card card)

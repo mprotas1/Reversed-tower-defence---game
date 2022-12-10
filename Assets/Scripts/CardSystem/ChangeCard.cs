@@ -2,15 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ChangeCard : MonoBehaviour
 {
-    public Image image;
-    public Sprite[] sprites;
+    [SerializeField]
+    private Card card;
+
+    [SerializeField]
+    private Card[] cards;
+
+    public static event Action<Card> OnCardChange;
+
+    private void Start()
+    {
+        int number = UnityEngine.Random.Range(0, cards.Length);
+        SetCard(cards[number]);
+        ChangeCardImage();
+    }
+
     public void ChangeCardImage()
     {
-        System.Random r = new System.Random();
-        int rnum = r.Next(0, 3);
-        image.sprite = sprites[rnum];
+        GetComponent<Image>().sprite = card.CardSprite;
+    }
+
+    public void ChangeOnClick()
+    {
+        int num = UnityEngine.Random.Range(0, cards.Length);
+        SetCard(cards[num]);
+        ChangeCardImage();
+        OnCardChange(card);
+    }
+
+    public void SetCard(Card card)
+    {
+        this.card = card;
+    }
+
+    public Card GetCard()
+    {
+        return this.card;
     }
 }

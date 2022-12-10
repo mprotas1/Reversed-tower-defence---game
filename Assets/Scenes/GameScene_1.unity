@@ -165,6 +165,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
   - {fileID: 21300000, guid: a3fbb53456b9a1345b63bded785004c9, type: 3}
   - {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
+  cards:
+  - {fileID: 11400000, guid: f1c0b33b1373d764b9bce57cdead0d6e, type: 2}
+  - {fileID: 11400000, guid: 3ad592c5517aae246b9ac50bcd160ad8, type: 2}
+  - {fileID: 11400000, guid: 0655cf6a50aacd3428edd43f2087d723, type: 2}
 --- !u!4 &7784779
 Transform:
   m_ObjectHideFlags: 0
@@ -264,6 +268,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bedb0cd50712a5429dbdac5d8c7ef48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &307848938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307848939}
+  m_Layer: 5
+  m_Name: CardButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &307848939
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307848938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 472683371}
+  - {fileID: 1882637600}
+  - {fileID: 1606620190}
+  - {fileID: 440080856}
+  m_Father: {fileID: 1502938998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &440080855
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,12 +335,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440080855}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502938998}
+  m_Father: {fileID: 307848939}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -350,7 +394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 440080860}
         m_TargetAssemblyTypeName: ChangeCard, Assembly-CSharp
-        m_MethodName: ChangeCardImage
+        m_MethodName: ChangeOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -410,11 +454,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205dde439d014d48b5fe73eb9d085c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 440080858}
-  sprites:
-  - {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
-  - {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
-  - {fileID: 21300000, guid: a3fbb53456b9a1345b63bded785004c9, type: 3}
+  card: {fileID: 0}
+  cards:
+  - {fileID: 11400000, guid: f1c0b33b1373d764b9bce57cdead0d6e, type: 2}
+  - {fileID: 11400000, guid: 3ad592c5517aae246b9ac50bcd160ad8, type: 2}
+  - {fileID: 11400000, guid: 0655cf6a50aacd3428edd43f2087d723, type: 2}
 --- !u!1 &472683370
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,12 +486,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472683370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502938998}
+  m_Father: {fileID: 307848939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -501,7 +545,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 472683375}
         m_TargetAssemblyTypeName: ChangeCard, Assembly-CSharp
-        m_MethodName: ChangeCardImage
+        m_MethodName: ChangeOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -561,11 +605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205dde439d014d48b5fe73eb9d085c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 472683373}
-  sprites:
-  - {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
-  - {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
-  - {fileID: 21300000, guid: a3fbb53456b9a1345b63bded785004c9, type: 3}
+  card: {fileID: 0}
+  cards:
+  - {fileID: 11400000, guid: f1c0b33b1373d764b9bce57cdead0d6e, type: 2}
+  - {fileID: 11400000, guid: 3ad592c5517aae246b9ac50bcd160ad8, type: 2}
+  - {fileID: 11400000, guid: 0655cf6a50aacd3428edd43f2087d723, type: 2}
 --- !u!1 &490208160
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.95
+      value: -0.08999944
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -787,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.21
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1159,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.37
+      value: 7.059987
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1337,7 +1381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.05
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 7806781138099216675, guid: b137a4873b33ab44a83da740e31ce8b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1478,10 +1522,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 472683371}
-  - {fileID: 1882637600}
-  - {fileID: 1606620190}
-  - {fileID: 440080856}
+  - {fileID: 307848939}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1522,12 +1563,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606620189}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502938998}
+  m_Father: {fileID: 307848939}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1581,7 +1622,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1606620194}
         m_TargetAssemblyTypeName: ChangeCard, Assembly-CSharp
-        m_MethodName: ChangeCardImage
+        m_MethodName: ChangeOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1641,11 +1682,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205dde439d014d48b5fe73eb9d085c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1606620192}
-  sprites:
-  - {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
-  - {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
-  - {fileID: 21300000, guid: a3fbb53456b9a1345b63bded785004c9, type: 3}
+  card: {fileID: 0}
+  cards:
+  - {fileID: 11400000, guid: f1c0b33b1373d764b9bce57cdead0d6e, type: 2}
+  - {fileID: 11400000, guid: 3ad592c5517aae246b9ac50bcd160ad8, type: 2}
+  - {fileID: 11400000, guid: 0655cf6a50aacd3428edd43f2087d723, type: 2}
 --- !u!1 &1862286776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,12 +1745,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882637599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502938998}
+  m_Father: {fileID: 307848939}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1763,7 +1804,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1882637604}
         m_TargetAssemblyTypeName: ChangeCard, Assembly-CSharp
-        m_MethodName: ChangeCardImage
+        m_MethodName: ChangeOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1823,11 +1864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205dde439d014d48b5fe73eb9d085c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1882637602}
-  sprites:
-  - {fileID: 21300000, guid: 1bf62aff2cf79e44585d63e0d718b4e6, type: 3}
-  - {fileID: 21300000, guid: 255eec84a99f6314d826feafe555efcb, type: 3}
-  - {fileID: 21300000, guid: a3fbb53456b9a1345b63bded785004c9, type: 3}
+  card: {fileID: 0}
+  cards:
+  - {fileID: 11400000, guid: f1c0b33b1373d764b9bce57cdead0d6e, type: 2}
+  - {fileID: 11400000, guid: 3ad592c5517aae246b9ac50bcd160ad8, type: 2}
+  - {fileID: 11400000, guid: 0655cf6a50aacd3428edd43f2087d723, type: 2}
 --- !u!1 &2012387408
 GameObject:
   m_ObjectHideFlags: 0
