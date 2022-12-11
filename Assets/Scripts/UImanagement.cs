@@ -13,7 +13,7 @@ public class UImanagement : MonoBehaviour
         moneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
         moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
 
-        moneyManager.OnMoneySubstracted += UpdateMoneyText;
+        moneyManager.OnMoneyChanged += UpdateMoneyText;
 
         moneyText.SetText(moneyManager.GetCurrentMoney().ToString());
     }
