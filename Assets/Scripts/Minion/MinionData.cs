@@ -23,4 +23,9 @@ public class MinionData : ScriptableObject
 
     [Range(0, 10)]
     public double AttackFrequency;
+
+    public override string ToString()
+    {
+        return "\nHP: " + HealthPoints + "\nArmor: " + Armor + "\nAttack: " + AttackPoints + "\nRange: " + Range + "\nAttack freq: " + AttackFrequency;
+    }
 }

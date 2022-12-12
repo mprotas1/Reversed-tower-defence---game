@@ -28,6 +28,8 @@ public class MinionAttack : MonoBehaviour
             // make minion to look at enemy LockedTower tower
             this.transform.LookAt(tower.gameObject.transform);
 
+            agent.stoppingDistance = 0.5f;
+
             // stop NavMeshAgent
             agent.isStopped = true;
 
@@ -37,10 +39,7 @@ public class MinionAttack : MonoBehaviour
             Debug.Log("Attacking");
             //animator.SetTrigger("Attack");
             minion.Attack(tower);
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) // check if "Attack" is playing...
-            {
-                animator.Play("Attack");
-            }
+            animator.Play("Attack");
 
             // delay attacks using AttackFrequency value from Minion
             StopAllCoroutines();

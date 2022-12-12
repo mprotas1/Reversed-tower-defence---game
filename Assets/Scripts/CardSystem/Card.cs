@@ -13,6 +13,7 @@ public class Card : ScriptableObject
 
     public override string ToString()
     {
-        return "Card with name: " + this.name + "\nCost: " + CashForMinion;
+        MinionData cardDesc = CardPrefab.GetComponent<Minion>().data;
+        return "Card with name: " + this.name + "\nCost: " + CashForMinion + cardDesc.ToString();
     }
 }

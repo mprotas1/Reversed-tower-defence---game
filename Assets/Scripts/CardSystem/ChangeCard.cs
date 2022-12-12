@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
-public class ChangeCard : MonoBehaviour
+public class ChangeCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     private Card card;
 
     [SerializeField]
     private Card[] cards;
+
+    [SerializeField]
+    private GameObject DescriptionPrefab;
+
+    private GameObject Description;
 
     public static event Action<Card> OnCardChange;
 
@@ -42,5 +48,25 @@ public class ChangeCard : MonoBehaviour
     public Card GetCard()
     {
         return this.card;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Destroy(Description);
+        Description = null;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(Description is null)
+        {
+            Description = GameObject.Instantiate(DescriptionPrefab, 
+                transform.position,
+                Quaternion.identity);
+
+            Description.transform.position = new Vector3(transform.position.x + 50, transform.position.y + 120);
+
+            Description.transform.SetParent(transform, false);
+        }
     }
 }
