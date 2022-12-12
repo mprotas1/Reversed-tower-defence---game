@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
 
     public static event Action<int> OnMinionPlaced;
 
+    public static event Action<int> OnMinionFalsePlacing;
+
     private void Awake()
     {
         cashManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
@@ -24,8 +26,9 @@ public class Spawner : MonoBehaviour
 
     private void SpawnMinion(Card card)
     {
-        Debug.Log(cashManager);
-        if(cashManager.GetCurrentMoney() >= card.CashForMinion)
+        int currentCash = cashManager.GetCurrentMoney();
+
+        if(currentCash >= card.CashForMinion)
         {
             Vector3 position = new Vector3(transform.position.x + UnityEngine.Random.Range(0, radius),
                 transform.position.y,
@@ -39,6 +42,8 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("You don't have enough money");
             // show message dialog that player does not have enough money
+            int deficit = Math.Abs(currentCash - card.CashForMinion);
+            OnMinionFalsePlacing(deficit);
         }
         
     }
