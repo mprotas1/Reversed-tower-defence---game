@@ -56,4 +56,9 @@ public class SoundManager : MonoBehaviour
             PlayMusic(MusicClips[1]);
         }
     }
+
+    public void ChangeMasterVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
 }
