@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip[] MusicClips, EffectClips;
+
+    [SerializeField]
+    public AudioMixer Mixer;
 
     private void Awake()
     {
@@ -57,8 +61,19 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    // setting the value of MasterVolume on AudioMixer
     public void ChangeMasterVolume(float value)
     {
-        AudioListener.volume = value;
+        Mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+    }
+
+    public void ChangeMusicVolume(float value)
+    {
+        Mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
+    }
+
+    public void ChangeSfxVolume(float value)
+    {
+        Mixer.SetFloat("SfxVolume", Mathf.Log10(value) * 20);
     }
 }

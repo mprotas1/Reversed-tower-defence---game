@@ -295,7 +295,7 @@ AudioSource:
   m_GameObject: {fileID: 50844819}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4644500960997380816, guid: 37c34e479d424e747a6b4c115329f852, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1791,6 +1791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902750206}
   - component: {fileID: 902750207}
+  - component: {fileID: 902750208}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -1865,13 +1866,26 @@ MonoBehaviour:
   m_FillRect: {fileID: 2031681201}
   m_HandleRect: {fileID: 641996260}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &902750208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902750205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96e38fc155815741a111ef7f1e1068f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 902750207}
 --- !u!1 &958149349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958149350}
   - component: {fileID: 958149351}
+  - component: {fileID: 958149352}
   m_Layer: 5
   m_Name: SfxSlider
   m_TagString: Untagged
@@ -1956,13 +1971,26 @@ MonoBehaviour:
   m_FillRect: {fileID: 1879317896}
   m_HandleRect: {fileID: 1648515950}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &958149352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958149349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96e38fc155815741a111ef7f1e1068f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 958149351}
 --- !u!1 &1135022364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2484,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6182974162a85f4448ced79b64a7a1d0, type: 3}
   - {fileID: 8300000, guid: d768178cfaf229c46ae183917e1e5319, type: 3}
   EffectClips: []
+  Mixer: {fileID: 24100000, guid: 37c34e479d424e747a6b4c115329f852, type: 2}
 --- !u!4 &1597659558
 Transform:
   m_ObjectHideFlags: 0
@@ -2996,7 +3025,7 @@ AudioSource:
   m_GameObject: {fileID: 1769931258}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1359442255831583525, guid: 37c34e479d424e747a6b4c115329f852, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3303,10 +3332,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1135022365}
   m_HandleRect: {fileID: 115619881}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
