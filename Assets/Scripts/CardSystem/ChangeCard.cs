@@ -34,10 +34,13 @@ public class ChangeCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void ChangeOnClick()
     {
-        int num = UnityEngine.Random.Range(0, cards.Length);
-        OnCardChange(card);
-        SetCard(cards[num]);
-        ChangeCardImage();
+        if(UImanagement.IsPauseMenuOpened == false)
+        {
+            int num = UnityEngine.Random.Range(0, cards.Length);
+            OnCardChange(card);
+            SetCard(cards[num]);
+            ChangeCardImage();
+        }
     }
 
     public void SetCard(Card card)

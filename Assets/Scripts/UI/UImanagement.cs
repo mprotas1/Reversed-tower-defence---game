@@ -12,7 +12,11 @@ public class UImanagement : MonoBehaviour
     private TextMeshProUGUI moneyText;
     private GameObject notEnoughMoneyText;
 
+    private GameObject PauseMenu;
+
     private string popupText;
+
+    public static bool IsPauseMenuOpened;
 
     void Start()
     {
@@ -20,6 +24,9 @@ public class UImanagement : MonoBehaviour
         moneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
         moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
         notEnoughMoneyText = GameObject.Find("PopupText");
+
+        PauseMenu = GameObject.Find("PauseMenu");
+        PauseMenu.SetActive(false);
 
         popupText = notEnoughMoneyText.GetComponent<TextMeshProUGUI>().text;
 
@@ -30,6 +37,34 @@ public class UImanagement : MonoBehaviour
         Spawner.OnMinionFalsePlacing += ShowPopup;
 
         moneyText.SetText(moneyManager.GetCurrentMoney().ToString());
+
+        IsPauseMenuOpened = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && IsPauseMenuOpened == false)
+        {
+            // stop the time
+            Time.timeScale = 0.0f;
+
+            // open the PauseMenu
+            PauseMenu.SetActive(true);
+
+            // reverse the flag
+            IsPauseMenuOpened = !IsPauseMenuOpened;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && IsPauseMenuOpened == true)
+        {
+            // restart the time
+            Time.timeScale = 1.0f;
+
+            // close the PauseMenu
+            PauseMenu.SetActive(false);
+
+            // reverse the flag
+            IsPauseMenuOpened = !IsPauseMenuOpened;
+        }
     }
 
     private void UpdateMoneyText(int value)
@@ -54,5 +89,4 @@ public class UImanagement : MonoBehaviour
         yield return new WaitForSeconds(timeDelay);
         notEnoughMoneyText.SetActive(false);
     }
-
 }

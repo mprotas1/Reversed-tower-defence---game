@@ -31,7 +31,10 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
-        AddCoins();
+        if(UImanagement.IsPauseMenuOpened == false)
+        {
+            AddCoins();
+        }
     }
 
     private void AddMoney(int value)
@@ -45,6 +48,7 @@ public class MoneyManager : MonoBehaviour
         OnMoneyChanged(CurrentMoney);
     }
 
+    // on level changed event to reset the value of CurrentMoney every time when the level is finished
     private void OnLevelChange(Scene current, Scene next)
     {
         // if level is changed - reset money value of player
